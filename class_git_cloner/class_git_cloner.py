@@ -1,14 +1,13 @@
-#!/usr/bin/python3
 #!/usr/local/bin/python3
 # File: class_git_cloner
 # Description: This script will clone the same repository from each student. The
-#   only thing that needs to happen is a students.txt file with all of the 
-#   GitHub account names listed on individual lines. 
+#   only thing that needs to happen is a students.txt file with all of the
+#   GitHub account names listed on individual lines.
 import sys, os
 from git import Repo
 
 # Open student file and read
-try: 
+try:
     students_file = open('students.txt', 'r')
 except:
     print('Students.txt is missing, please try again')
@@ -21,7 +20,10 @@ os.mkdir(repo_name)
 
 # Loop through students and clone all repos
 for student in students:
-    git_url = 'https://github.com/' + student + '/' + repo_name
-    repo_dir = repo_name + '/' + student 
-    Repo.clone_from(git_url, repo_dir)
-
+    git_url = 'https://github.com/' + student + '/' + repo_name + '-' + student
+    print(git_url)
+    repo_dir = repo_name + '/' + student
+    try:
+        Repo.clone_from(git_url, repo_dir)
+    except:
+        print(student + "'s repo was not found" )
