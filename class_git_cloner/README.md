@@ -12,10 +12,12 @@ It is very basic and doesn't need to be used in a fashion meant for students.
   pip3 install GitPython
   ```
 
-* `student.txt` file located in the home directory of the class of students.
+* `students.txt` file located in the home directory of the class of students.
+  This file should list of student GitHub account names. There should only be
+  one name per line. 
 
 ## Running the Script
-There must be a `student.txt` file for the script to run. You can run the
+There must be a `students.txt` file for the script to run. You can run the
 script by running `python3 class_git_cloner` or `./class_git_cloner` if the
 Python3 path matches.
 
@@ -26,4 +28,4 @@ classroom assignment.
 The script will try to read the file `students.txt`. The script will ask for the
 name of the repository used for the assignment. The script will create a
 directory named the repo name followed directory by the students repository
-being cloned into that directory. 
+being cloned into that directory.
